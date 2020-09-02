@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import getMarketsByState from '@salesforce/apex/marketServices.getMarketsByState';
+//import getMarketsByState from '@salesforce/apex/marketServices.getMarketsByState';
 export default class ReservationDetailForm extends LightningElement {
     @api state;
     @api city;
@@ -45,7 +45,7 @@ export default class ReservationDetailForm extends LightningElement {
             : 'No markets found';
     }
 
-    @wire(getMarketsByState, { state: '$state' })
+    /*@wire(getMarketsByState, { state: '$state' })
     wiredMarketData({ error, data }) {
         if (error) {
             this.errorMsg = error;
@@ -56,7 +56,7 @@ export default class ReservationDetailForm extends LightningElement {
                 label: element.City__c
             }));
         }
-    }
+    }*/
 
     handleCityChoice(event) {
         this.chosenCity = event.detail.value;
